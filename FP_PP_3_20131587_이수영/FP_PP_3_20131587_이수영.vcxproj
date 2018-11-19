@@ -84,10 +84,10 @@
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
-      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
-      <SDLCheck>true</SDLCheck>
+      <SDLCheck>false</SDLCheck>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
     </ClCompile>
@@ -147,17 +147,42 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="stdafx.h" />
-    <ClInclude Include="targetver.h" />
+    <ClInclude Include="buffile.h" />
+    <ClInclude Include="delim.h" />
+    <ClInclude Include="deltext.h" />
+    <ClInclude Include="fixfld.h" />
+    <ClInclude Include="fixlen.h" />
+    <ClInclude Include="indfile.h" />
+    <ClInclude Include="iobuffer.h" />
+    <ClInclude Include="lecture.h" />
+    <ClInclude Include="member.h" />
+    <ClInclude Include="purchase.h" />
+    <ClInclude Include="recfile.h" />
+    <ClInclude Include="textind.h" />
+    <ClInclude Include="tindbuffer.h" />
+    <ClInclude Include="varlen.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="FP_PP_3_20131587_이수영.cpp" />
-    <ClCompile Include="stdafx.cpp">
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
-    </ClCompile>
+    <ClCompile Include="buffile.cpp" />
+    <ClCompile Include="delim.cpp" />
+    <ClCompile Include="deltext.cpp" />
+    <ClCompile Include="fixfld.cpp" />
+    <ClCompile Include="fixlen.cpp" />
+    <ClCompile Include="iobuffer.cpp" />
+    <ClCompile Include="lecture.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="member.cpp" />
+    <ClCompile Include="purchase.cpp" />
+    <ClCompile Include="textind.cpp" />
+    <ClCompile Include="tindbuffer.cpp" />
+    <ClCompile Include="varlen.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="fileOfLecture.dat" />
+    <None Include="fileOfLecture.ind" />
+    <None Include="fileOfMember.dat" />
+    <None Include="fileOfMember.ind" />
+    <None Include="fileOfPurchase.dat" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
