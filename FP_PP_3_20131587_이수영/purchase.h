@@ -11,10 +11,12 @@ using namespace std;
 
 class Purchase{
 private:
-	char PurchaseID[17];
-	char LectureID[13];
+	char PurchaseID[LEN_PURCHASE_ID];
+	char LectureID[LEN_LECTURE_ID];
 	string MemberID;
-	char Mileage[11];
+	char Mileage[LEN_MILEAGE];
+	// Project3 added.
+	char key;
 
 public:
 	Purchase();
@@ -32,6 +34,9 @@ public:
 	void setLectureID(const char* newLectureID) { memcpy(LectureID, newLectureID, LEN_LECTURE_ID); };
 	void setMemberID(const string newMemberID) { MemberID = newMemberID; };
 	void setMileage(const char* newMileage) { memcpy(Mileage, newMileage, LEN_MILEAGE); };
+	// Project3 added.
+	void setKey(const char newKey) { key = newKey; }
+
 
 	char* getPurchaseID(void) {
 		return PurchaseID;
@@ -51,6 +56,9 @@ public:
 
 	bool Pack(IOBuffer &Buffer) const;
 	bool Unpack(IOBuffer &);
+
+	// Project3 added.
+	char Key();
 };
 
 istream & operator >> (istream &is, Purchase &s);

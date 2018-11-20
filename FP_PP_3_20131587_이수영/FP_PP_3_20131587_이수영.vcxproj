@@ -147,32 +147,40 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="btnode.h" />
+    <ClInclude Include="btree.h" />
     <ClInclude Include="buffile.h" />
     <ClInclude Include="delim.h" />
     <ClInclude Include="deltext.h" />
     <ClInclude Include="fixfld.h" />
     <ClInclude Include="fixlen.h" />
+    <ClInclude Include="indbuff.h" />
     <ClInclude Include="indfile.h" />
     <ClInclude Include="iobuffer.h" />
     <ClInclude Include="lecture.h" />
     <ClInclude Include="member.h" />
     <ClInclude Include="purchase.h" />
     <ClInclude Include="recfile.h" />
+    <ClInclude Include="simpind.h" />
     <ClInclude Include="textind.h" />
     <ClInclude Include="tindbuffer.h" />
     <ClInclude Include="varlen.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="btnode.cpp" />
+    <ClCompile Include="btree.cpp" />
     <ClCompile Include="buffile.cpp" />
     <ClCompile Include="delim.cpp" />
     <ClCompile Include="deltext.cpp" />
     <ClCompile Include="fixfld.cpp" />
     <ClCompile Include="fixlen.cpp" />
+    <ClCompile Include="indbuff.cpp" />
     <ClCompile Include="iobuffer.cpp" />
     <ClCompile Include="lecture.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="member.cpp" />
     <ClCompile Include="purchase.cpp" />
+    <ClCompile Include="simpind.cpp" />
     <ClCompile Include="textind.cpp" />
     <ClCompile Include="tindbuffer.cpp" />
     <ClCompile Include="varlen.cpp" />
