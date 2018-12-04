@@ -1,7 +1,6 @@
 #include <iostream>
 #include "simpind.cpp"
 #include "btnode.h"
-#include "fixfld.h"
 
 #ifndef BTNODE_TC
 #define BTNODE_TC
@@ -12,8 +11,16 @@ BTreeNode<keyType>::BTreeNode(int maxKeys, int unique)
 	Init();
 }
 
-template <class keyTyoe>
+template <class keyType>
 BTreeNode<keyType>::~BTreeNode() {}
+
+template <class keyType>
+int BTreeNode<keyType>::Search(const keyType key, const int recAddr, const int exact) const {
+	int result;
+	result = SimpleIndex<keyType>::Search(key, recAddr);
+	if (!result) return 0; // Search failed.
+	return result;
+}
 
 template <class keyType>
 int BTreeNode<keyType>::Insert(const keyType key, int recAddr) {

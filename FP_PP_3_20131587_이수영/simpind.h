@@ -31,7 +31,7 @@ protected:
 	int Unique;
 	friend class IndexBuffer<keyType>;
 #ifdef BTREE_H
-	friend class BTree<ketType>;
+	friend class BTree<keyType>;
 #endif
 };
 

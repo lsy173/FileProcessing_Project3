@@ -20,14 +20,14 @@ void SimpleIndex<keyType>::Clear() {
 }
 
 template <class keyType>
-void SimpleIndex<keyType>::Insert(const keyType key, int recAddr) {
+int SimpleIndex<keyType>::Insert(const keyType key, int recAddr) {
 	int i;
 	int index = Find(key);
 	if (Unique && index >= 0) return 0;
 	if (NumKeys == MaxKeys) return 0;
 	for (i = NumKeys - 1; i >= 0; i--) {
 		if (key > Keys[i]) break;
-		Keys[i + 1] = Key[i];
+		Keys[i + 1] = Keys[i];
 		RecAddrs[i + 1] = RecAddrs[i];
 	}
 	Keys[i + 1] = key;
@@ -38,7 +38,7 @@ void SimpleIndex<keyType>::Insert(const keyType key, int recAddr) {
 
 template <class keyType>
 int SimpleIndex<keyType>::Remove(const keyType key, const int recAddrs) {
-	int index = Find(key, recAddr);
+	int index = Find(key, recAddrs);
 	if (index < 0) return 0;
 	for (int i = index; i < NumKeys; i++) {
 		Keys[i] = Keys[i + 1];

@@ -5,7 +5,7 @@
 
 const int MaxHeight = 5;
 template <class keyType>
-BTree<keyType>::BTree(int order, int keySize, int unique) : Buffer(1 + 2 * order, sizeof(int), +order * keySize + order * sizeof(int)), BTreeFile(Buffer), Root(order) {
+BTree<keyType>::BTree(int order, int keySize, int unique) : Buffer(1 + 2 * order, sizeof(int)+ order*keySize + order*sizeof(int)), BTreeFile(Buffer), Root(order) {
 	Height = 1;
 	Order = order;
 	PoolSize = MaxHeight * 2;
@@ -61,7 +61,7 @@ int BTree<keyType>::Insert(const keyType key, const int recAddr) {
 
 	// test for special case of new largest key in tree
 	if (key > thisNode->LargestKey()) {
-		newLargest = 1
+		newLargest = 1;
 		prevKey = thisNode->LargestKey();
 	}
 
@@ -86,8 +86,7 @@ int BTree<keyType>::Insert(const keyType key, const int recAddr) {
 		if (level < 0) break;
 		// insert newNode into parent of thisNode.
 		parentNode = Nodes[level];
-		result = parentNode->UpdateKey(largestKey, t
-			hisNode->LargestKey());
+		result = parentNode->UpdateKey(largestKey, thisNode->LargestKey());
 		result = parentNode->Insert(newNode->LargestKey(), newNode->RecAddr);
 		thisNode = parentNode;
 	}
